@@ -47,7 +47,7 @@ apicem = {
 apic = {
              "host": "https://sandboxapicdc.cisco.com",
              "username": "admin",
-             "password": "ciscopsdt",
+             "password": "!v3G@!4@Y",
              "port": 443
          }
 

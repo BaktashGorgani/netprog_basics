@@ -9,8 +9,8 @@
 # - Basic Playbook Structure for NX-OS Modules
 ##############################################################
 ---
-- name: Retrieve facts from Switches
-  hosts: switches
+- name: Retrieve facts from Servers
+  hosts: servers
   gather_facts: False
 
   # Ansible added new connection options for networking devices

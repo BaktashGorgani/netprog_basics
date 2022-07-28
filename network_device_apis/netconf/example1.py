@@ -16,6 +16,8 @@ __author_email__ = "hapresto@cisco.com"
 __copyright__ = "Copyright (c) 2016 Cisco Systems, Inc."
 __license__ = "MIT"
 
+import sys
+sys.path.append("C:\\Users\\baky5\\Git\\netprog_basics\\network_device_apis\\netconf")
 from device_info import ios_xe1
 from ncclient import manager
 

@@ -26,8 +26,8 @@ netconf_template = open("config-temp-ietf-interfaces.xml").read()
 if __name__ == '__main__':
     # Build the XML Configuration to Send
     netconf_payload = netconf_template.format(int_name="GigabitEthernet2",
-                                              int_desc="Configured by NETCONF",
-                                              ip_address="10.255.255.1",
+                                              int_desc="Configured by BAKY",
+                                              ip_address="192.168.0.254",
                                               subnet_mask="255.255.255.0"
                                               )
     print("Configuration Payload:")

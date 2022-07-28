@@ -1,4 +1,4 @@
-! /usr/bin/env python
+#! /usr/bin/env python
 """
 Learning Series: Network Programmability Basics
 Module: Network Controllers
@@ -13,7 +13,8 @@ Illustrate the following concepts:
 - Intended to be entered into an interactive
   interpreter
 """
-
+import sys
+sys.path.append("C:\\Users\\baky5\\Git\\netprog_basics\\network_controllers\\aci")
 from device_info import apic
 from acitoolkit.acitoolkit import *
 

@@ -55,19 +55,19 @@ def host_list(dnac, ticket, ip=None, mac=None, name=None):
       MAC address
       Hostname
     """
-    url = "https://{}/api/v1/host".format(dnac)
+    url = "https://{}/api/v1/network-device/ip-address/{}".format(dnac,ip)
     headers["x-auth-token"] = ticket
     filters = []
 
     # Add filters if provided
-    if ip:
-        filters.append("hostIp={}".format(ip))
-    if mac:
-        filters.append("hostMac={}".format(mac))
-    if name:
-        filters.append("hostName={}".format(name))
-    if len(filters) > 0:
-        url += "?" + "&".join(filters)
+    #if ip:
+    #    filters.append("hostIp={}".format(ip))
+    #if mac:
+    #    filters.append("hostMac={}".format(mac))
+    #if name:
+    #    filters.append("hostName={}".format(name))
+    #if len(filters) > 0:
+    #    url += "?" + "&".join(filters)
 
     # Make API request and return the response body
     response = requests.request("GET", url, headers=headers, verify=False)
@@ -83,10 +83,10 @@ def verify_single_host(host, ip):
     if len(host) == 0:
         print("Error: No host with IP address {} was found".format(ip))
         sys.exit(1)
-    if len(host) > 1:
-        print("Error: Multiple hosts with IP address {} were found".format(ip))
-        print(json.dumps(host, indent=2))
-        sys.exit(1)
+    #if len(host) > 1:
+    #    print("Error: Multiple hosts with IP address {} were found".format(ip))
+    #    print(json.dumps(host, indent=2))
+    #    sys.exit(1)
 
 
 def print_host_details(host):
@@ -116,7 +116,7 @@ def print_host_details(host):
 
     # Print Standard Details
     print("Host Name: {}".format(host["hostName"]))
-    print("Network Type: {}".format(host["hostType"]))
+    print("Network Type: {}".format(host["family"]))
     print("Connected Network Device: {}".format(host["connectedNetworkDeviceIpAddress"]))  # noqa: E501
 
     # Print Wired/Wireless Details
@@ -173,8 +173,8 @@ if __name__ == '__main__':
     # Print Out Host details
     print("Source Host Details:")
     print("-" * 25)
-    print_host_details(source_host[0])
+    print_host_details(source_host)
 
     print("Destination Host Details:")
     print("-" * 25)
-    print_host_details(destination_host[0])
+    print_host_details(destination_host)

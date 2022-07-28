@@ -17,3 +17,4 @@
 # Authentication for ansible network modules
 export ANSIBLE_NET_USERNAME=cisco
 export ANSIBLE_NET_PASSWORD=cisco
+export ANSIBLE_CONFIG=./ansible.cfg
