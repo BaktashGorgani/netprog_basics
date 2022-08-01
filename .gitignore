@@ -119,3 +119,8 @@ config_sample.xml
 scratch*
 to-do*
 Vagrantfile
+
+# Custom Virtual Environments added
+*aci_practice/
+*netconf_practive/
+*yang_practice/
